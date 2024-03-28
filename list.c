@@ -29,16 +29,19 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-  //la cual retorna el puntero del tipo de dato List con sus valores inicializados en NULL.
   List * lista = (List *)malloc(sizeof(List));
   lista->head = NULL;
   lista->tail = NULL;
   lista->current = NULL;
   return lista;
 }
-
+//Esta funcion retorna el dato del primer nodo de la lista (head) y actualiza el current para que apunte a ese nodo
 void * firstList(List * list) {
+  if (list->head == NULL) {
     return NULL;
+  }
+  list->current = list->head;
+  return list->head->data;
 }
 
 void * nextList(List * list) {
