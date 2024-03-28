@@ -35,7 +35,7 @@ List * createList() {
   lista->current = NULL;
   return lista;
 }
-//Esta funcion retorna el dato del primer nodo de la lista (head) y actualiza el current para que apunte a ese nodo
+
 void * firstList(List * list) {
   if (list->head == NULL) {
     return NULL;
@@ -45,7 +45,12 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
+  if (list->current == NULL || list->current->next == NULL)
+  {
     return NULL;
+  }
+  list->current = list->current->next;
+  return list->current->data;
 }
 
 void * lastList(List * list) {
