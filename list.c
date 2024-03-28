@@ -57,8 +57,8 @@ void * nextList(List * list)
   return list->current->data;
 }
 
-//Esta funcion retorna el dato del último elemento en la lista y actualiza el current al nodo correspondiente.
-void * lastList(List * list) {
+void * lastList(List * list) 
+{
   if (list->tail == NULL) 
   {
     return NULL;
@@ -67,8 +67,8 @@ void * lastList(List * list) {
   return list->tail->data;
 }
 
-//Esta funcion retorna el dato del nodo anterior a current y actualiza el current para que apunte a ese nodo.
-void * prevList(List * list) {
+void * prevList(List * list) 
+{
   if (list->current == NULL || list->current->prev == NULL)
   {
     return NULL;
@@ -77,7 +77,21 @@ void * prevList(List * list) {
   return list->current->data;
 }
 
-void pushFront(List * list, void * data) {
+//Esta funcion agrega un dato al comienzo de la lista.
+void pushFront(List * list, void * data) 
+{
+  Node * nuevoNodo = createNode(data);
+  if (list->head == NULL)
+  {
+    list->head = nuevoNodo;
+    list->tail = nuevoNodo;
+  }
+  else
+  {
+    nuevoNodo->next = list->head;
+    list->head->prev = nuevoNodo;
+    list->head = nuevoNodo;
+  }
 }
 
 void pushBack(List * list, void * data) {
