@@ -28,7 +28,8 @@ Node * createNode(void * data) {
     return new;
 }
 
-List * createList() {
+List * createList() 
+{
   List * lista = (List *)malloc(sizeof(List));
   lista->head = NULL;
   lista->tail = NULL;
@@ -36,15 +37,18 @@ List * createList() {
   return lista;
 }
 
-void * firstList(List * list) {
-  if (list->head == NULL) {
+void * firstList(List * list) 
+{
+  if (list->head == NULL) 
+  {
     return NULL;
   }
   list->current = list->head;
   return list->head->data;
 }
 
-void * nextList(List * list) {
+void * nextList(List * list) 
+{
   if (list->current == NULL || list->current->next == NULL)
   {
     return NULL;
@@ -53,8 +57,14 @@ void * nextList(List * list) {
   return list->current->data;
 }
 
+//Esta funcion retorna el dato del último elemento en la lista y actualiza el current al nodo correspondiente.
 void * lastList(List * list) {
+  if (list->tail == NULL) 
+  {
     return NULL;
+  }
+  list->current = list->tail;
+  return list->tail->data;
 }
 
 void * prevList(List * list) {

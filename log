@@ -20,3 +20,9 @@ Thu 28 Mar 2024 02:10:30 PM UTC:
  tests:  5|4
 total_score: 25/70
 3c1a3d3
+Thu 28 Mar 2024 02:14:09 PM UTC: 
+ list.c | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+ tests:  6|4
+total_score: 25/70
+8d5bf30
